@@ -1,0 +1,176 @@
+;-------------------------------------------------
+;                                                ;
+;           Polybar config for my themes         ;
+; 				                 ;
+;                                                ;
+;-------------------------------------------------
+
+
+[colors]
+;My colors are set from .Xresources to match everything else
+my_background 	= #101218
+my_foreground 	= #d1d4e0
+my_color0	= #828282
+my_color1	= #cc6666
+my_color2	= #81a2be
+my_color3	= #f0c674
+my_color4	= #81a2be
+my_color5	= #b294bb
+my_color6	= #8abeb7
+my_color7	= #c5c8c6
+my_color8	= #828282
+my_color9	= #cc6666
+my_color10	= #81a2be
+my_color11	= #f0c674
+my_color12	= #81a2be
+my_color13	= #b294bb
+my_color14	= #8abeb7
+my_color15	= #c5c8c6
+
+
+[bar/top]
+bottom = false
+width = 100%
+height = 25
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+background = ${colors.my_background}
+foreground =  ${colors.my_foreground}
+
+line-size = 2.5
+line-color = ${colors.my_foreground}
+
+border-size = 0
+border-color = ${colors.my_color2}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-2 = Font Awesome 5 Free Solid:style=Solid:size=12;1
+font-0 = Source Code Pro:style=Regular:fontformat=truetype:size=11;1
+font-1 = Source Code Pro:style=Regular:fontformat=truetype:size=11;1
+font-3 = Weather Icons:size=12;1
+
+modules-left = i3
+modules-center = date 
+modules-right = weather space ip space volume space battery space wifi space keyboard space
+
+tray-position = right
+tray-padding = 9
+tray-transparent = false
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+
+wm-restack = i3
+
+
+[module/i3]
+type = internal/i3
+label-unfocused-background = ${colors.my_background}
+label-unfocused-foreground = ${colors.my_foreground}
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.my_background}
+label-focused = %index%
+label-focused-foreground = ${colors.my_foreground}
+label-focused-background = ${colors.my_background}
+label-focused-underline = ${colors.my_foreground}
+label-focused-padding = 2
+label-unfocused = %index%
+label-unfocused-padding = 2
+label-visible = %index%
+label-visible-underline = ${colors.my_foreground}
+label-visible-padding = 4
+label-urgent = %index%
+label-urgent-foreground = ${colors.my_foreground}
+label-urgent-background = ${colors.my_background}
+label-urgent-underline = ${colors.my_foreground}
+label-urgent-padding = 2
+
+
+[module/date]
+type = internal/date
+interval = 5
+date = "%{T3}%{T-} %d.%m.%Y" 
+date-alt = "%{T3}%{T-} %d/%m/%Y"
+time = %{T3}%{T-} %H:%M
+time-alt = %{T3}%{T-} %H:%M
+format-prefix-foreground = ${colors.my_foreground}
+format-underline =
+label = %date% %time%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+label-charging = "%{T3}%{T-} %percentage%%"
+label-discharging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = "%{T3}%{T-}"
+ramp-capacity-1 = "%{T3}%{T-}" 
+ramp-capacity-2 = "%{T3}%{T-}"
+ramp-capacity-3 = %{T3}%{T-}
+ramp-capacity-4 = %{T3}%{T-}
+
+
+[module/keyboard]
+type = internal/xkeyboard
+
+
+[module/space]
+type = custom/text
+content = "    "
+
+
+[module/poweroff]
+type = custom/script
+exec = echo 1
+label = %{T3}%{T-}
+click-left=systemctl suspend
+click-right=systemctl poweroff
+
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+interval = 5
+format-volume = "%{T3}%{T-} <label-volume>"
+format-muted = "%{T3}%{T-} <label-muted>"
+
+
+[module/weather]
+type = custom/script
+exec = /home/atm/.config/polybar/weather.sh
+interval = 90 
+label-font = 4
+
+[module/wifi]
+type = internal/network
+interface = wlan0
+label-connected = "%{T3}%{T-} %essid%"
+label-disconnected = "%{T3}%{T-} -"
+
+
+[module/ip]
+type = custom/script
+exec = /home/atm/.config/polybar/ip.sh
+interval = 120
+label-font = 3
+
+[settings]
+screenchange-reload = true
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
