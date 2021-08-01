@@ -108,3 +108,5 @@ source $ZSH/oh-my-zsh.sh
 # added by travis gem
 [ ! -s /home/atm/.travis/travis.sh ] || source /home/atm/.travis/travis.sh
 alias dotfiles='/usr/bin/git --git-dir=/home/atm/.dotfiles/ --work-tree=/home/atm'
+
+export CHROME_BIN=/usr/bin/chromium

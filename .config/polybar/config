@@ -8,24 +8,24 @@
 
 [colors]
 ;My colors are set from .Xresources to match everything else
-my_background 	= #101218
-my_foreground 	= #d1d4e0
-my_color0	= #828282
-my_color1	= #cc6666
-my_color2	= #81a2be
-my_color3	= #f0c674
-my_color4	= #81a2be
-my_color5	= #b294bb
-my_color6	= #8abeb7
-my_color7	= #c5c8c6
-my_color8	= #828282
-my_color9	= #cc6666
-my_color10	= #81a2be
-my_color11	= #f0c674
-my_color12	= #81a2be
-my_color13	= #b294bb
-my_color14	= #8abeb7
-my_color15	= #c5c8c6
+my_background 	= #21252b  
+my_foreground 	= #abb2bf
+my_color0	= #000000
+my_color1	= #e06c75
+my_color2	= #98c379
+my_color3	= #d19a66
+my_color4	= #61afef
+my_color5	= #c678dd
+my_color6	= #56b6c2
+my_color7	= #abb2bf
+my_color8	= #5c6370
+my_color9	= #e06c75
+my_color10	= #98c379
+my_color11	= #d19a66
+my_color12	= #61afef
+my_color13	= #c678dd
+my_color14	= #56b6c2
+my_color15	= #fffefe
 
 
 [bar/top]
@@ -40,10 +40,10 @@ fixed-center = true
 background = ${colors.my_background}
 foreground =  ${colors.my_foreground}
 
-line-size = 2.5
+line-size = 3
 line-color = ${colors.my_foreground}
 
-border-size = 0
+border-size = 0 
 border-color = ${colors.my_color2}
 
 padding-left = 0
@@ -53,13 +53,13 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-2 = Font Awesome 5 Free Solid:style=Solid:size=11;1
-font-0 = Source Code Pro:style=Regular:fontformat=truetype:size=10;1
-font-1 = Source Code Pro:style=Regular:fontformat=truetype:size=10;1
+font-0 = Fira Code:style=Regular:size=10;1
+font-1 = Fira Code:style=Regular:size=10;1
 font-3 = Weather Icons:size=11;1
 
 modules-left = i3
 modules-center = date 
-modules-right = weather space ip space battery space wifi space volume space keyboard space
+modules-right = battery space wifi space volume space keyboard space
 
 tray-position = right
 tray-padding = 9
@@ -78,23 +78,23 @@ type = internal/i3
 label-unfocused-background = ${colors.my_background}
 label-unfocused-foreground = ${colors.my_foreground}
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-background = ${colors.my_background}
 label-focused = %index%
 label-focused-foreground = ${colors.my_foreground}
 label-focused-background = ${colors.my_background}
 label-focused-underline = ${colors.my_foreground}
-label-focused-padding = 2
+label-focused-padding = 1
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 label-visible = %index%
 label-visible-underline = ${colors.my_foreground}
-label-visible-padding = 4
+label-visible-padding = 1
 label-urgent = %index%
 label-urgent-foreground = ${colors.my_foreground}
 label-urgent-background = ${colors.my_background}
 label-urgent-underline = ${colors.my_foreground}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 
 [module/date]
@@ -129,7 +129,7 @@ type = internal/xkeyboard
 
 [module/space]
 type = custom/text
-content = "    "
+content = " "
 
 
 [module/poweroff]
@@ -156,7 +156,7 @@ label-font = 4
 
 [module/wifi]
 type = internal/network
-interface = wlan0
+interface = wlo1
 label-connected = "%{T3}%{T-} %essid%"
 label-disconnected = "%{T3}%{T-} -"
 

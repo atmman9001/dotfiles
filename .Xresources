@@ -24,55 +24,55 @@ XTerm*faceSize: 11
 
 URxvt.internalBorder: 6
 ! special
-*.foreground:   #c6c6c6
-*.background:   #1f1f1f
-*.cursorColor:  #c6c6c6
+*.foreground:   #ABB2BF
+*.background:   #21252B
+*.cursorColor:  #ABB2BF
 
 ! black
-*.color0:       #828282
-*.color8:       #828282
+*.color0:       #000000
+*.color8:       #5C6370
 
 ! red
-*.color1:       #cc6666
-*.color9:       #cc6666
+*.color1:       #E06C75
+*.color9:       #E06C75
 
 ! green
-*.color2:       #81a2be
-*.color10:      #81a2be
+*.color2:       #98C379
+*.color10:      #98C379
 
 ! yellow
-*.color3:       #f0c674
-*.color11:      #f0c674
+*.color3:       #D19A66
+*.color11:      #D19A66
 
 ! blue
-*.color4:       #81a2be
-*.color12:      #81a2be
+*.color4:       #61AFEF
+*.color12:      #61AFEF
 
 ! magenta
-*.color5:       #b294bb
-*.color13:      #b294bb
+*.color5:       #C678DD
+*.color13:      #C678DD
 
 ! cyan
-*.color6:       #8abeb7
-*.color14:      #8abeb7
+*.color6:       #56B6C2
+*.color14:      #56B6C2
 
 ! white
-*.color7:       #c5c8c6
-*.color15:      #c5c8c6
+*.color7:       #ABB2BF
+*.color15:      #FFFEFE
 
 
 Xcursor.theme: Breeze
 Xcursor.size:  0
 
-URxvt.font: xft:Source Code Pro:size=10:antialias=true:hinting=true
+URxvt.font: xft:Fira Code:style=Regular:size=10:antialias=true:hinting=true
 URxvt.geometry: 80x20
 URxvt.depth: 32
-URxvt.background:	[100]#101218
+URxvt.background:		[100]#21252B
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
-URxvt*.foreground: 		      #c6c6c6
-URxvt*cursorColor:		      #c6c6c6
+URxvt*.foreground: 		      #ABB2BF
+URxvt*cursorColor:		      #ABB2BF
 URxvt*saveLines:                      5000
 
 URxvt.iso14755: false
